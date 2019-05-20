@@ -52,6 +52,7 @@
   text-transform: capitalize;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
+  opacity: .6;
 }
 
 h1 {
@@ -60,6 +61,27 @@ h1 {
   text-align:  center;
   color: darkblue;
 }
+
+h5 {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.0em;
+  margin-right: 20px;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+p {
+  margin-left: 100px;
+}
+
+
+
 
 /* Mobile Rules */
 @media screen and (max-width: 530px) {
