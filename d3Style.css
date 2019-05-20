@@ -24,9 +24,11 @@
 }
 
 /* font size dependent on radius, see app.js */
-.stateText {
+.state-abbr {
   font-family: sans-serif;
-  fill: #fff;
+  font-size: 0.55em;
+  font-weight: 500;
+  fill: whitesmoke;
   text-anchor: middle;
 }
 
@@ -50,6 +52,13 @@
   text-transform: capitalize;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
+}
+
+h1 {
+  font-family: 'Faster One', cursive;
+  font-size: 2.6em;
+  text-align:  center;
+  color: darkblue;
 }
 
 /* Mobile Rules */
