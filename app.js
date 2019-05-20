@@ -80,7 +80,7 @@ function updateToolTip(xSelection, ySelection, circles){
     switch (ySelection){
         case 'obesity': yTip = 'Obesity Rate:';
             break;
-        case 'smokes': yTip = 'Smoker Rate:';
+        case 'smokes': yTip = 'Smoker Population Rate:';
             break;
         case 'healthcare': yTip = 'Lack of Healthcare Rate: ';
     }
@@ -156,19 +156,19 @@ function updateToolTip(xSelection, ySelection, circles){
         .attr('x', 0).attr('y', 20)
         .attr('value', 'poverty')
         .attr('class', 'active')
-        .text('In Poverty (%)');
+        .text('Poverty Rate(%)');
     
     const ageLabel = xLabels.append('text')
         .attr('x', 0).attr('y', 40)
         .attr('value', 'age')
         .attr('class', 'inactive')
-        .text('Age (Median)');
+        .text('Median Age in Population');
     
     const incomeLabel = xLabels.append('text')
         .attr('x', 0).attr('y', 60)
         .attr('value', 'income')
         .attr('class', 'inactive')
-        .text('Household Income (Median)')
+        .text('Median Household Income')
 
     const yLabels = chartGroup.append('g')
         .attr('transform', 'rotate(-90)')
@@ -177,13 +177,13 @@ function updateToolTip(xSelection, ySelection, circles){
         .attr('x', 0-(height/2)).attr('y', -40)
         .attr('value', 'obesity')
         .attr('class', 'active')
-        .text('Obesity (%)')
+        .text('Obesity Rate (%)')
     
     const smokesLabel = yLabels.append('text')
         .attr('x', 0-(height/2)).attr('y', -60)
         .attr('value', 'smokes')
         .attr('class', 'inactive')
-        .text('Smokes (%)')
+        .text('Smoking Population (%)')
     
     const hCareLabel = yLabels.append('text')
         .attr('x', 0-(height/2)).attr('y', -80)
