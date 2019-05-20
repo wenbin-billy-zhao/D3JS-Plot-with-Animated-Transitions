@@ -2,7 +2,7 @@
 const svgWidth = 960;
 const svgHeight = 500;
 
-const margin = {top:20, right:100, bottom:100, left:100};
+const margin = {top:20, right:60, bottom:100, left:100};
 
 const width = svgWidth - margin.left - margin.right;
 const height = svgHeight - margin.top - margin.bottom;
@@ -29,6 +29,25 @@ function yScale(healthData, ySelection){
         .range([height, 0]);
     return yLinearScale;
 }
+
+function renderXAxes(xLinearScale, xAxis){
+    let bottomAxis = d3.axisBottom(xLinearScale);
+    xAxis.transition()
+        .duration(1000)
+        .call(bottomAxis);
+
+    return xAxis;
+}
+
+function renderYAxes(yLinearScale, yAxis){
+    let leftAxis = d3.axisLeft(yLinearScale);
+    yAxis.transition()
+        .duration(1000)
+        .call(leftAxis);
+
+    return yAxis;
+}
+
 
 function drawCircles(circles, newXScale, newYScale, xSelection, ySelection){
     circles.transition()
@@ -186,6 +205,8 @@ function updateToolTip(xSelection, ySelection, circles){
 
                 circles = drawCircles(circles, xLinearScale, yLinearScale, xSelection, ySelection);
                 
+                xAxis = renderXAxes(xLinearScale, xAxis)
+
                 circles = updateToolTip(xSelection, ySelection, circles);
 
                 abbrs = drawAbbrs(abbrs, xLinearScale, yLinearScale, xSelection, ySelection);
@@ -232,7 +253,9 @@ function updateToolTip(xSelection, ySelection, circles){
                 yLinearScale = yScale(healthData, ySelection);
 
                 circles = drawCircles(circles, xLinearScale, yLinearScale, xSelection, ySelection);
-
+                
+                yAxis = renderYAxes(yLinearScale, yAxis)
+                
                 circles = updateToolTip(xSelection, ySelection, circles);
                 
                 abbrs = drawAbbrs(abbrs, xLinearScale, yLinearScale, xSelection, ySelection);
