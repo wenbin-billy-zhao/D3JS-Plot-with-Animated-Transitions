@@ -1,5 +1,7 @@
 # D3JS-Plot-with-Animated-Transitions
 
+The Web App link is here: https://wenbin-billy-zhao.github.io/D3JS-Plot-with-Animated-Transitions/index.html
+
 ![screen shot](screen-record.gif)
 
 ### This is a scatter plot with multiple dimensions, by clicking on different dimensions result dynamically updated transition of data
